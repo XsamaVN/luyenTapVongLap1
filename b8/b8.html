@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>game đoán số</h1>
+<button onclick="game()">Bắt Đầu</button>
+<script>
+  function game(){
+    let a = +prompt('nhập khoảng bạn muốn chơi')
+    let r = Math.floor(Math.random()*a);
+      console.log(r)
+    let soDoan = +prompt ("Nhập số bạn đoán");
+    let count = 0;
+
+    while (soDoan !== r) {
+      count++;
+      if (count == 5) {
+        alert("Bạn hết số lần đoán")
+        break;
+      } else if (soDoan < r) {
+        alert("Số bạn đoán bé hơn");
+      } else {
+        alert ("Số bạn đoán lớn hơn")
+      }
+      soDoan = +prompt ("Nhập số bạn đoán");
+    }
+      if(soDoan == r) {
+          alert("Bạn đã đoán đúng số. Chúc mừng bạn!")
+      }
+      if(count == 5){
+          alert('Bạn đã hết số lần đoán. mời chơi lại')
+      }
+  }
+</script>
+
+</body>
+</html>
